@@ -1,0 +1,104 @@
+WAP to print the least number of 2000,500 and 100 notes required for a given amount?
+import java.util.Scanner;
+public class Denominations 
+{
+
+	public static void main(String[] args)
+	{
+		int a,b,c,n;
+		int amt;
+		Scanner S=new Scanner(System.in);
+		System.out.println("Enter amount");
+		amt=S.nextInt();
+		if(amt%100!=0)
+		{
+			System.out.println("Invalid amount");
+		}
+		else
+	    {
+	   	if(amt>=2000)
+		{
+			a=amt/2000;
+			amt=amt-(a*2000);
+			System.out.println("2000 rupees notes are:"+a);
+		}
+		if(amt>=500)
+		{
+			b=amt/500;
+			amt=amt-(b*500);
+			System.out.println("500 rupees notes are:"+b);
+		}
+		if(amt>=100)
+		{
+			c=amt/100;
+			amt=amt-(c*100);
+			System.out.println("100 rupees notes are:"+c);
+		}
+	}
+}
+}
+======================================================================================
+WAP to accept project,internal,external marks and check if student got passed in all subjects.Then find total score:
+70% from project
+20% from internal
+10% from external
+if the total: >85:Outstanding
+	      75-85:Excellent
+	      65-75:Good
+	      50-65:Avg
+Print failed subject along with score?
+
+import java.util.Scanner;
+
+public class SubjectResult 
+{
+
+	public static void main(String[] args) 
+	{
+		int pro,internal,ext;
+		double total;
+		Scanner S=new Scanner(System.in);
+		System.out.println("Enter marks of project,internal & external");
+		pro=S.nextInt();
+		internal=S.nextInt();
+		ext=S.nextInt();
+		
+		if(pro>=50&&internal>=50&&ext>=50)
+		{
+			total=pro*0.7+internal*0.2+ext*0.1;
+			System.out.println("Total marks:"+total);
+			if(total>=85)
+			{
+				System.out.println("Outstanding");
+			}
+			else if(total>=75)
+			{
+				System.out.println("Excellent");
+			}
+			else if(total>=65)
+			{
+				System.out.println("Good");
+			}
+			else
+			{
+				System.out.println("Average");
+			}
+		}
+			else
+			{
+				if(pro<50)
+				{
+					System.out.println("Project got failed and score is:"+pro);
+				}
+				if(internal<50)
+				{
+					System.out.println("Internal got failed and score is:"+internal);
+				}
+				if(ext<50)
+				{
+					System.out.println("External got failed and score is:"+ext);
+				}
+			}
+	}
+
+}
