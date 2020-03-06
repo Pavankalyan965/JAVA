@@ -1,0 +1,13 @@
+public class StringReverse {
+
+	public static void main(String[] args) {
+		String str="Hai hello hyderabad hai hello niit";
+		String words[]=str.split(" ");
+		int i;
+		for(i=words.length-1;i>=0;i--)
+		{
+			System.out.print(words[i]+" ");
+		}
+	}
+
+}

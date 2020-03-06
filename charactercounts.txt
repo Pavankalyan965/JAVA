@@ -1,0 +1,18 @@
+
+public class CharacterCount {
+
+	public static void main(String[] args) 
+	{
+		String str="Hai hello hyderabad hai hello niit";
+		String words[]=str.split(" ");
+		int i;
+		for(i=0;i<words.length;i++)
+		{
+			
+			System.out.println(words[i]+":"+words[i].length());
+			
+		}
+		
+	}
+
+}
