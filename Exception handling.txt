@@ -1,0 +1,77 @@
+public class Exceptionexamples 
+{
+	public static void main(String args[])
+	{
+		System.out.println("line 1");
+	   try {
+		   System.out.println("before try");
+		   try {
+		   System.out.println(10/2);
+		   }
+		   catch(Exception e)
+		   {
+		   System.out.println("inner catch");
+		   }
+		   System.out.println("line2");
+	   }
+	   catch(Exception e)
+	   {
+		  System.out.println("outer catch");
+	   }
+	   System.out.println("line 3");
+	}
+
+}
+================================================================
+
+public class ExceptionExamples
+{
+	public static void main(String args[])
+	{
+		System.out.println("line 1");
+	   try {
+		   System.out.println("before try");
+		   try {
+		   System.out.println(10/0);
+		   }
+		   catch(Exception e)
+		   {
+		   System.out.println(10/0);
+		   }
+		   System.out.println("line2");
+	   }
+	   catch(Exception e)
+	   {
+		  System.out.println("outer catch");
+	   }
+	   System.out.println("line 3");
+	}
+
+}
+=====================================================================
+public class ExceptionExamples 
+{
+	public static void main(String args[])
+	{
+		System.out.println("hai");
+		try {
+			String str="234 ";
+			Integer.parseInt(str);
+		}
+		
+		catch(ArithmeticException ae)
+		{
+			System.out.println("catch block 1");
+		}
+		catch(NumberFormatException n)
+		{
+			System.out.println("catch block 2");
+		}
+		catch(Exception e)
+		{
+			System.out.println("catch block 3");
+		}
+	}
+
+}
+

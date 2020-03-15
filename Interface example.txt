@@ -1,0 +1,32 @@
+interface Abc
+{
+	  public void m1();
+	  public void m2();
+	  public void m3();
+	  
+}
+ abstract class A implements Abc
+{
+ 	public void  m1()
+ 	{
+ 		System.out.println("m1 method");
+ 	}
+ 	public void m2()
+ 	{
+ 		
+ 	}
+ 	public void m3()
+ 	{
+ 		
+ 	}
+}
+public class Sample1 extends A
+ {
+	 
+	public static void main(String[] args) 
+	{  
+	   Sample1 obj=new Sample1();
+	   obj.m1();
+	}
+
+}

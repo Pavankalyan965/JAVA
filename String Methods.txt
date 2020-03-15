@@ -1,0 +1,46 @@
+
+public class StringMethods
+{
+
+public static void main(String[] args) 
+{
+	int f=90,g=200;
+	double c=20.5,e=200.0;
+	String str="Hii hello NIIT hii hello Hyderabad hii";
+	String abc="PavanKalyan";
+	char ch='k';
+	byte r=(byte)(f+g);
+	long j=f+g;
+	int i=ch;
+	double p=ch;
+	char cha=(char)(f);
+	short s=(short)(c+e);
+	String a="90",b="200";
+	int a1=Integer.parseInt(a);
+	int b1=Integer.parseInt(b);
+	String f1=String.valueOf(f);
+	String g1=String.valueOf(g);
+	String words[]=str.split(" ");
+	System.out.println(f+g);
+	System.out.println(str.length());
+	System.out.println(str.equals(abc));
+	System.out.println(str.equalsIgnoreCase(abc));
+	System.out.println(abc.startsWith("Pa"));
+	System.out.println(str.endsWith("hai"));
+	System.out.println(abc.toUpperCase());
+	System.out.println(str.toLowerCase());
+	System.out.println(words.length);
+	System.out.println(str.substring(9));
+	System.out.println(str.substring(5, 20));
+	System.out.println(abc.substring(2,6));
+	System.out.println(str.toString());
+	System.out.println(abc.charAt(5));
+	System.out.println(r);
+	System.out.println(j);
+	System.out.println(i);
+	System.out.println(s);
+	System.out.println(cha);
+	System.out.println(a1+b1);
+	System.out.println(f1+g1);
+}
+}

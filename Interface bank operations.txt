@@ -1,0 +1,184 @@
+interface Phonepe
+{
+	public static final long acnum=7416534226l;
+	public void validate(int pin);
+	public double deposit(int amt);
+	public double withdraw(int amt);
+	
+}
+======================================================================
+import java.util.Scanner;
+
+public class GooglePay implements Phonepe
+{
+	double acbal=1000;
+	public void validate(int pin)
+	{
+		int pc=1,epin=1;
+		while(pc<=3)
+		{
+		System.out.println("Enter your pin");
+		Scanner s=new Scanner(System.in);
+		epin=s.nextInt();
+		if(pin==epin)
+		{
+			options();
+		}
+		else 
+		{
+			pc++;
+			System.out.println("Incorrect pin,please try again");
+		}
+		}
+		System.out.println("You have entered incorrect pin for 3 times.");
+	}
+	public double deposit(int amt)
+	{
+		acbal=acbal+amt;
+		System.out.println(acbal);
+		return acbal;
+		
+	}
+	public double withdraw(int amt)
+	{
+		int a,b,c,temp=0,rem=0,decision;
+		System.out.println("Enter amount to withdraw");
+		Scanner s=new Scanner(System.in);
+		amt=s.nextInt();
+		temp=amt;
+		if(amt<=acbal)
+		{
+			if(amt%100==0)
+			{
+				if(amt>=2000)
+				{
+					a=amt/2000;
+					amt=amt-(a*2000);
+				}
+				if(amt>=500)
+				{
+					b=amt/500;
+					amt=amt-(b*500);
+				}
+				if(amt>=100)
+				{
+					c=amt/100;
+					amt=amt-(c*100);
+				}
+				amt=temp;
+				acbal=acbal-amt;
+			System.out.println(acbal);	
+			}
+				else
+				{
+					rem=amt%100;
+					if(amt<50)
+					{
+						amt=amt-(rem);
+						System.out.println(amt);
+						System.out.println("Enter option 1 or 2");
+						decision=s.nextInt();
+						if(decision==1)
+						{
+							acbal=amount(amt);
+						}
+						else
+						{
+							System.out.println("Enter valid amount to withdraw");
+							amt=s.nextInt();
+							acbal=amount(amt);
+						}
+					}
+					else
+					{
+						rem=amt%100;
+						if(amt>50)
+						{
+							amt=(amt-rem)+100;
+							System.out.println("Enter your option");
+							decision=s.nextInt();
+							if(decision==1)
+							{
+								acbal=amount(amt);
+							}
+							else
+							{
+								System.out.println("Enter valid amount");
+								amt=s.nextInt();
+								acbal=amount(amt);
+							}
+						}
+					}
+			}
+		}
+		
+		return acbal;
+	}
+	public double amount(int amt)
+	{
+		int a,b,c,temp;
+		temp=amt;
+		if(amt<=acbal)
+		{
+			if(amt%100==0)
+			{
+			if(amt>=20000)
+			{
+				a=amt/2000;
+				amt=amt-(a*2000);
+			}
+			if(amt>=500)
+			{
+				b=amt/500;
+				amt=amt-(b*500);
+			}
+			if(amt>=100)
+			{
+				c=amt/100;
+			}
+			amt=temp;
+			acbal=acbal-amt;
+		}
+	}
+		return acbal;
+	}
+	public void options()
+	{
+		int opt,amt;
+		
+		System.out.println("1.Deposit  2.Withdraw");
+		do
+		{
+			System.out.println("Enter your option");
+			Scanner s=new Scanner(System.in);
+			opt=s.nextInt();
+			switch(opt)
+			{
+				case 1:
+				System.out.println("Enter amount to deposit");
+			    amt=s.nextInt();
+			    acbal=deposit(amt);
+			    break;
+			    
+			    case 2:
+			    System.out.println("Enter amount to withdraw");
+			    amt=s.nextInt();
+			    acbal=withdraw(amt);
+			    System.out.println(acbal);
+			    break;
+			}
+			
+		}
+		while(opt!=0);
+	}
+}
+====================================================================================================
+
+public class Paytm 
+{
+	public static void main(String[] args) 
+	{
+		GooglePay g=new GooglePay();
+		g.validate(1234);
+	}
+}

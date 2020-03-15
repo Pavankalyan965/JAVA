@@ -1,0 +1,89 @@
+public class Variable
+{
+   int b=45;
+	public void m1()
+	{
+		int a=90;
+		System.out.println("local variable value is "+a);
+		System.out.println("instance variable value "+b);
+		
+	}
+	public void m2()
+	{
+		int a=23;
+	System.out.println(" local variable value is "+a); 
+	System.out.println("instance variable value "+b);
+	}
+	
+	public static void main(String[] args) 
+	{
+	
+             Example obj=new Example();
+             obj.m1();
+             obj.m2();
+             
+	}
+
+}
+===========================================================================
+
+import java.util.Scanner;
+
+public class Bank 
+{
+	public void m1()
+	{
+		System.out.println("m1 of Bank class");
+	}
+	public void m2()
+	{
+		System.out.println("m2 of Bank class");
+	}
+	public void m3()
+	{
+		System.out.println("m3 of Bank class");
+	}
+  public static void m4()
+  {
+	  Scanner s=new Scanner(System.in);
+	  System.out.println("Enter pin ");
+	  int pin=s.nextInt();
+	  if(pin==1234)
+	  {
+		  new Bank().m3();
+	  }
+	  else
+	  {
+		  System.out.println("invalid pin");
+	  }
+  }
+}
+==============================================================================
+public class GooglePay
+{       
+ static int a=90;
+         int b=45;
+         public void m1()
+         {
+        	 int c=34;
+        	 System.out.println("local variable: "+c);
+        	 System.out.println("instance variable: "+b);
+        	 System.out.println("sattic variable : "+a);
+         }
+         public static void m2()
+         {
+        	 int c=34;
+        	 System.out.println("local variable: "+c);
+        	 System.out.println("instance variable: "+b);
+        	 System.out.println("sattic variable : "+a);
+         }
+
+	public static void main(String args[])
+	{
+	
+	   System.out.println(b);
+	   System.out.println(a);
+		
+	}
+
+}

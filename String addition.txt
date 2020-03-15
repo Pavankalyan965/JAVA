@@ -1,0 +1,21 @@
+
+int a=45,b=90;
+String c="hai",d="hello";
+
+System.out.println(a+b+c+d);
+System.out.println(b+c+d+a);
+System.out.println(c+d+a+b);
+System.out.println(d+a+b+c);
+
+
+public static void main(String[] args) 
+	{
+		               int a=45,b=90;
+				String c="hai",d="hello";
+
+				System.out.println(a+b+c+d);
+				System.out.println(b+c+d+a);
+				System.out.println(c+d+a+b);
+				System.out.println(d+a+b+c);
+		   
+	}
