@@ -1,0 +1,44 @@
+WAP to create a text file using Java?
+package FilesJava;
+import java.io.File;
+import java.io.IOException;
+
+public class CreateFile 
+{
+
+	public static void main(String[] args) 
+	{
+		File f= new File("F://Files/abc.txt");
+		try
+		{
+			f.createNewFile();
+		}
+		catch(IOException e)
+		{
+			System.out.println(e);
+		}
+	}
+
+}
+============================================================================
+WAP to create a folder using Java?
+package FilesJava;
+import java.io.File;
+import java.io.IOException;
+public class CreateDirectory
+{
+
+	public static void main(String[] args) 
+	{
+		File f=new File("F://Files/Project");
+		try
+		{
+			f.mkdir();
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
+}

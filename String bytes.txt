@@ -1,0 +1,19 @@
+package FilesJava;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileOutputStream;
+
+public class StringBytes 
+{
+
+	public static void main(String[] args) throws Exception 
+	{
+		FileOutputStream fos=new FileOutputStream("F://Files/Pavan.txt");
+		String str="Hai hello hyderabad";
+		byte b[]=str.getBytes();
+		fos.write(b);
+		fos.flush();
+		fos.close();
+	}
+
+}

@@ -1,0 +1,97 @@
+package FilesJava;
+import java.io.File;
+import java.io.IOException;
+
+public class ThreadExample extends Thread
+{
+	public void run()
+	{
+		for(int i=0;i<=20;i++)
+		System.out.println("Child");
+	}
+	public static void main(String[] args) 
+	{
+		ThreadExample t=new ThreadExample();
+		t.start();
+		for(int i=0;i<=30;i++)
+			System.out.println("Main");
+	}
+
+}
+============================================================================
+Thread overloading:
+package FilesJava;
+import java.io.File;
+import java.io.IOException;
+public class ThreadOverloading extends Thread 
+{
+	public void run()
+	{
+		System.out.println("Child");
+	}
+	public void run(int i)
+	{
+		System.out.println("Child 2");
+	}
+
+	public static void main(String[] args) 
+	{
+		ThreadOverloading t = new ThreadOverloading();
+		t.start();
+		System.out.println("Main");
+	}
+
+}
+======================================================================================
+Thread Priority:
+package FilesJava;
+import java.io.File;
+import java.io.IOException;
+public class ThreadPriority extends Thread
+{
+	public void run()
+	{
+		//ThreadPriority.currentThread().setPriority(10);
+		for(int i=0;i<10;i++)
+		System.out.println("Child:");
+	}
+	public static void main(String[] args) 
+	{
+		ThreadPriority t=new ThreadPriority();
+		t.start();
+		Thread.currentThread().setPriority(1);
+		for(int i=0;i<10;i++)
+		System.out.println("Main");
+	}
+
+}
+==========================================================================================
+Thread interface-Runnable
+package FilesJava;
+import java.io.File;
+interface Runnable
+{
+	public void run();
+}
+public class RunnableThread implements Runnable
+{
+	public void run()
+	{
+		for(int i=0;i<5;i++)
+		{
+			System.out.println("Child");
+		}
+	}
+
+	public static void main(String[] args)
+	{
+		RunnableThread rt=new RunnableThread();
+		Thread t=new Thread();
+		rt.run();
+		for(int i=0;i<5;i++)
+		{
+			System.out.println("Main");
+		}
+	}
+
+}

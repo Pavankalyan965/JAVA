@@ -1,0 +1,123 @@
+WAP to print no of lines, characters,words,files in a given file?
+Characters:
+package FilesJava;
+import java.io.File;
+import java.io.FileReader;
+public class NumberofCharacters
+{
+
+	public static void main(String[] args) 
+	{
+
+		try
+		{
+		FileReader fr=new FileReader("F://Files/Project/def.txt");
+		int i=0,count=0;
+		int ch;
+		
+		while((ch=fr.read())!=-1)
+		{
+			count++;
+		}
+		System.out.println("No of characters in given string are:"+ count);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
+}
+===============================================================================================================
+Words:
+package FilesJava;
+import java.io.File;
+import java.io.FileReader;
+import java.io.BufferedReader;
+public class NumberofWords 
+{
+
+	public static void main(String[] args) 
+	{
+		try
+		{
+		FileReader fr=new FileReader("F://Files/Project/xyz.txt");
+		int i=0,count=1;
+		int ch;
+		
+		while((ch=fr.read())!=-1)
+		{
+			if(ch==' ')
+			{
+			count++;
+		}
+		}
+		System.out.println("No of words in given string are:"+ count);
+		
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	
+	}
+}
+=============================================================================================
+Lines
+package FilesJava;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+public class NumberOfLines
+{
+
+	public static void main(String[] args) 
+	{
+		try
+		{
+			FileReader fr=new FileReader("F://Files/Project/abc.txt");
+			BufferedReader br=new BufferedReader(fr);
+			int count=0,ch;
+			String str;
+			while((str=br.readLine())!=null)
+			{	
+				//System.out.println((str));
+				count++;
+			}
+			System.out.println("No of lines are:"+count);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
+}
+===================================================================================================================
+Files:
+package FilesJava;
+import java.io.File;
+import java.io.IOException;
+public class NumberOfFiles 
+{
+
+	public static void main(String[] args) 
+	{
+		File f=new File("F://Software");
+		try
+		{
+			int count=0;
+			File arr[]=f.listFiles();
+			for(int i=0;i<arr.length;i++)
+			{
+				count++;
+			}
+			System.out.println(count);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
+}
