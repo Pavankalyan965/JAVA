@@ -1,0 +1,27 @@
+package Jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class DeleteOperations 
+{
+
+	public static void main(String[] args) 
+	{
+		String name="manoj";
+		try
+		{
+			Class.forName("org.h2.Driver");
+			Connection con=DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "pavan", "pavan");
+			Statement stmt=con.createStatement();
+			int i=stmt.executeUpdate("delete from student where name='"+name+"'");
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
+}

@@ -1,0 +1,42 @@
+package Jdbc;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+public class InsertOperations
+{
+
+	public static void main(String[] args) 
+	{
+		try
+		{
+			Class.forName("org.h2.Driver");
+			Connection con=DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test","pavan" ,"pavan");
+			if(con!=null)
+			{
+				Statement stmt=con.createStatement();
+				int i=stmt.executeUpdate("insert into student values('pavan',23,'male')");
+				 i=stmt.executeUpdate("insert into student values('baru',20,'female')");
+				 i=stmt.executeUpdate("insert into student values('manoj',26,'male')");
+				
+				if(i>0)
+				{
+					System.out.println("Records inserted successfully");
+				}
+				else
+				{
+					System.out.println("Error");
+				}
+			}
+			else
+			{
+				System.out.println("No");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
+}

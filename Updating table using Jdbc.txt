@@ -1,0 +1,27 @@
+package Jdbc;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+public class UpdateOperations 
+{
+	
+	public static void main(String[] args) 
+	{
+		String name="charan",gender="female";
+		int age=23;
+		try
+		{
+			Class.forName("org.h2.Driver");
+			Connection con=DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "pavan", "pavan");
+			Statement stmt=con.createStatement();
+			int i=stmt.executeUpdate("insert into student values(' "+name+"','"+age+"','"+gender+"')");
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
+}
